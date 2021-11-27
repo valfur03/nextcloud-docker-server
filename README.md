@@ -14,6 +14,10 @@ You need to create three files for the server to work properly:
 
 Both parameters (`VIRTUAL_HOST` and `LETSENCRYPT_HOST`) must bet set to the (sub)domain of your host in most cases.
 
+### CAA DNS record
+
+For the certificate to be generated, you have to configure the [CAA DNS record](https://letsencrypt.org/docs/caa).
+
 ## Installation
 
 Then, just launch the server with:
