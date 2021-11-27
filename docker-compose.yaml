@@ -47,9 +47,8 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
       - nextcloud:/var/www/html
-    environment:
-      - VIRTUAL_HOST=pi.valfur.fr
-      - LETSENCRYPT_HOST=pi.valfur.fr
+    env_file:
+      - host.env
     depends_on:
       - app
     networks:
