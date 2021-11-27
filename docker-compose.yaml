@@ -18,6 +18,12 @@ services:
     networks:
       - backend
 
+  redis:
+    image: redis:6.2.6
+    restart: always
+    networks:
+      - backend
+
   app:
     image: nextcloud:20.0.14-fpm
     restart: always
@@ -28,8 +34,10 @@ services:
       - MYSQL_PASSWORD_FILE=/run/secrets/mysql_password
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
+      - REDIS_HOST=redis
     depends_on:
       - database
+      - redis
     networks:
       - backend
 
