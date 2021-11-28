@@ -35,6 +35,7 @@ services:
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
       - REDIS_HOST=redis
+      - OVERWRITEPROTOCOL=https
     depends_on:
       - database
       - redis
